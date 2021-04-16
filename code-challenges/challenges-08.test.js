@@ -1,195 +1,190 @@
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 1 - Review
 
-Write a function named returnTen, takes in a string and uses split and splice to return the last 10 characters from that string as elements of an array.
+Use the characters data below for all of the challenges except challenge 2 and 3.
+
+Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
 ------------------------------------------------------------------------------------------------ */
+let characters = [
+  {
+    name: 'Eddard',
+    spouse: 'Catelyn',
+    children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+    house: 'Stark'
+  },
+  {
+    name: 'Jon A.',
+    spouse: 'Lysa',
+    children: ['Robin'],
+    house: 'Arryn'
+  },
+  {
+    name: 'Cersei',
+    spouse: 'Robert',
+    children: ['Joffrey', 'Myrcella', 'Tommen'],
+    house: 'Lannister'
+  },
+  {
+    name: 'Daenarys',
+    spouse: 'Khal Drogo',
+    children: ['Drogon', 'Rhaegal', 'Viserion'],
+    house: 'Targaryen'
+  },
+  {
+    name: 'Mace',
+    spouse: 'Alerie',
+    children: ['Margaery', 'Loras'],
+    house: 'Tyrell'
+  },
+  {
+    name: 'Euron',
+    spouse: null,
+    children: [],
+    house: 'Greyjoy'
+  },
+  {
+    name: 'Jon S.',
+    spouse: null,
+    children: [],
+    house: 'Snow'
+  }
+];
 
-function returnTen(str){
-  let example = str.split('');
-  let newArr = example.length;
-  let index = newArr -10;
-  return example.splice(index);
-}
+const sortByChildren = (charArray) => {
+  charArray.sort((a, b) => {
+    if (a.children.length === b.children.length) {
+      if (a.house < b.house) return -1;
+      if (a.house > b.house) return 1;
+      return 0;
+    }
+    return a.children.length - b.children.length;
+  });
+  return charArray;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named typeNum that, given an array as input, uses filter to return an array containing only the numbers.
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
 
-For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => {
-  return arr.filter(x => typeof(x) === 'number');
+const containsW = (str) => {
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named containsAnd that, given an array of strings as input, uses filter to return an array containing only strings that contain 'and' within the string.
+Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
 
-For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
+For example:
+12345 returns true
+'12345' returns true
+'h3llo world' returns true
+'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = (arr) => {
-  return arr.filter(str => str.match(/and/g));
+const isNum = (input) => {
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named oddValues that, given an array of integers as input, uses filter to return an array containing only the odd integers.
+Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
 
-For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => arr.filter( x => x % 2 !== 0 );
-
+const containsWorld = (input) => {
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
+Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
 
-The callback function to filter should include or utilize a regular expression pattern.
-
-For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 'hound'].
+Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-
-const filterStringsWithVowels = (arr) => arr.filter( str => /[aeiou]/.test(str));
-
+const isCapitalized = (str) => {
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
-
-For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
+Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => arr.filter( value => !forbiddenValues.includes(value));
+const citiesAtoJ = (arr) => {
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named getBaseStatGreaterThan that, given the snorlaxData, below, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+You have created a game application and begin by asking users an easy question: In which month is Halloween?
 
-For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
+Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
+
+If the user enters any of these four inputs, return true. For any other input, return false.
+
+Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
-const snorlaxData = {
-  stats: [
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/6/',
-        name: 'speed',
-      },
-      effort: 5,
-      baseStat: 30,
-    },
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/5/',
-        name: 'special-defense',
-      },
-      effort: 2,
-      baseStat: 110,
-    },
-    {
-      stat: {
-        url: 'https://pokeapi.co/api/v2/stat/4/',
-        name: 'special-attack',
-      },
-      effort: 9,
-      baseStat: 65,
-    },
-  ],
-  name: 'snorlax',
-  weight: 4600,
-};
-
-const getBaseStatGreaterThan = (arr, minBaseStat) => {
+const matchMonth = (input) => {
   // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 4. For this function, extend your solution from challenge 4 to only return the name of the stat, rather than the entire stat object.
+Write a function named noPunctuation that contains a regular expression pattern to find all of the words that contain a space immediately at the end of the word. Return an array of all such words, still containing the space at the end.
 
-For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
+For example, if given the string "Hello, and have a wonderful day!", the word "Hello, " would not be returned because it is immediately followed by a comma. The word "day!" would not be returned because it is immediately followed by an exclamation point.
+
+The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) => {
+const noPunctuation = str => {
   // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
+You want to teach a friend how to play hangman and want to show them using a partially complete puzzle.
+
+Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string, regardless of capitalization, and replace them with an underscore.
+
+The function should return a string containing the consonants in their original positions and underscores where the vowels were previously located.
+
+For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-const characters = [
-  {
-    name: 'Eddard',
-    spouse: 'Catelyn',
-    children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
-    house: 'Stark',
-  },
-  {
-    name: 'Jon',
-    spouse: 'Lysa',
-    children: ['Robin'],
-    house: 'Arryn',
-  },
-  {
-    name: 'Cersei',
-    spouse: 'Robert',
-    children: ['Joffrey', 'Myrcella', 'Tommen'],
-    house: 'Lannister',
-  },
-  {
-    name: 'Daenarys',
-    spouse: 'Khal Drogo',
-    children: ['Drogon', 'Rhaegal', 'Viserion'],
-    house: 'Targaryen',
-  },
-  {
-    name: 'Mace',
-    spouse: 'Alerie',
-    children: ['Margaery', 'Loras'],
-    house: 'Tyrell',
-  },
-  {
-    name: 'Sansa',
-    spouse: 'Tyrion',
-    house: 'Stark',
-  },
-  {
-    name: 'Jon',
-    spouse: null,
-    house: 'Snow',
-  },
-];
-
-const getCharactersWithoutChildren = (arr) => {
+let hangman = (str) => {
   // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
+Write a function named findShells that takes in the string below and uses a regular expression pattern to find all instances of the following words: "sells", "shells", "seashells".
 
-For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
+Do not use the vertical bar (pipe) character.
+
+Hint: All of these words end with the letters "ells".
 ------------------------------------------------------------------------------------------------ */
 
-const evenOddNumericValues = (arr) => {
+const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
+
+const findShells = (str) => {
   // Solution code here...
 };
 
@@ -200,127 +195,132 @@ All the code below will verify that your functions are working to solve the chal
 
 DO NOT CHANGE any of the below code.
 
-Run your tests from the console: jest challenges-08.test.js
+Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
-  test('it should return the last 10 characters of a string as an array', () => {
-    expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
-    expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
+  test('It should sort the characters by number of children', () => {
+    expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
+    expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
   });
 });
 
 describe('Testing challenge 2', () => {
-  test('It should return an array containing only numbers', () => {
-    expect(typeNum([1, 'bob', 3])).toStrictEqual([1, 3]);
-    expect(typeNum([1, 'bob', 3]).length).toStrictEqual(2);
-    expect(typeNum(['banana', 'apples', 'cherry'])).toStrictEqual([]);
-    expect(typeNum([2, 3, 5])).toStrictEqual([2, 3, 5]);
+  test('It should return true if the input contains a lower case w', () => {
+    expect(containsW('hello world')).toBe(true);
   });
-});
+  test('It should return false if the input contains an upper case W', () => {
+    expect(containsW('Hello World')).toBe(false);
+  });
+  test('It should return false if the input does not contain a w', () => {
+    expect(containsW('hello everyone')).toBe(false);
+  })
+})
 
 describe('Testing challenge 3', () => {
-  test('It should return an array of strings containing the word and', () => {
-    expect(containsAnd(['panda', 'ran', 'and'])).toStrictEqual(['panda', 'and']);
-    expect(containsAnd(['banana','bob','xyz'])).toStrictEqual([]);
-    expect(containsAnd([])).toStrictEqual([]);
-    expect(containsAnd(['and', 'sand'])).toStrictEqual(['and', 'sand']);
+  test('It should return true if the input is a number', () => {
+    expect(isNum(1234567890)).toBeTruthy();
+    expect(isNum('12345')).toBeTruthy();
+  });
+  test('It should return true if the input contains a number', () => {
+    expect(isNum('h3llo w0rld')).toBeTruthy();
+  });
+  test('It should return false if the input does not contain a number', () => {
+    expect(isNum('hello world')).toBeFalsy();
+    expect(isNum('')).toBeFalsy();
   });
 });
 
 describe('Testing challenge 4', () => {
-  test('It should return an array containing only odd integers', () => {
-    expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 3, 5, 7, 9]);
-    expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(5);
-    expect(oddValues([2,3,4,179])).toStrictEqual([3,179]);
-    expect(oddValues([2,4,6,8])).toStrictEqual([]);
+  test('It should return true if the input contains the word school in lower case', () => {
+    expect(containsWorld('hello world')).toBe(true);
   });
-});
+  test('It should return false if the input contains the word school with any upper case letters', () => {
+    expect(containsWorld('Hello World')).toBe(false);
+  });
+  test('It should return false if the input does not contain the word school', () => {
+    expect(containsWorld('hello everyone')).toBe(false);
+  });
+})
 
 describe('Testing challenge 5', () => {
-  test('It should return an array containing only words that have vowels', () => {
-    expect(filterStringsWithVowels(['gregor','hound','xyz'])).toStrictEqual(['gregor', 'hound']);
-    expect(filterStringsWithVowels(['gregor','hound','xyz']).length).toStrictEqual(2);
-    expect(filterStringsWithVowels(['a', 'b', 'cdefg'])).toStrictEqual(['a', 'cdefg']);
-    expect(filterStringsWithVowels(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ''])).toStrictEqual(['a', 'e', 'i', 'o', 'u']);
-  });
+  test('It should only return words that begin with a capital letter', () => {
+    const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
-  test('It should not contain any words that do not contain vowels', () => {
-    expect(filterStringsWithVowels(['gregor','hound','xyz'])).not.toContain('xyz');
+    expect(capitalResult).toStrictEqual([ 'We', 'Return', 'Words', 'With', 'Letter' ]);
+    expect(capitalResult.length).toStrictEqual(5);
+
+    expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
+
+    expect(isCapitalized('these words are all failures')).toStrictEqual([]);
   });
 });
 
 describe('Testing challenge 6', () => {
-  const firstNums = [1, 2, 3];
-  const secondNums = [1, 2, 3, 4];
+  let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
-  const firstStrings = ['Demi', 'Gregor', 'Hound'];
-  const secondStrings = ['Gary', 'Charlotte', 'Demi', 'Gregor', 'Hound'];
+  test('It should return the cities whose names begin with the letters A through J', () => {
+    expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
+    expect(citiesAtoJ(cities).length).toStrictEqual(5);
 
-  test('It should return an array that includes any elements not in the first array', () => {
-    expect(notInFirstArray(firstNums, secondNums)).toStrictEqual([4]);
-    expect(notInFirstArray(firstNums, secondNums).length).toStrictEqual(1);
+    expect(citiesAtoJ([])).toStrictEqual([]);
+    expect(citiesAtoJ(['Albuquerque', 'Chicago', 'Philadelphia', 'Newark', 'Sacramento', 'Eugene'])).toEqual(expect.arrayContaining(['Albuquerque', 'Chicago', 'Eugene']));
   });
 
-  test('It should also work with an array of strings', () => {
-    expect(notInFirstArray(firstStrings, secondStrings)).toStrictEqual(['Gary', 'Charlotte']);
-    expect(notInFirstArray(firstStrings, secondStrings).length).toStrictEqual(2);
-  });
-
-  test('It should work with empty arrays', () => {
-    expect(notInFirstArray([], [])).toStrictEqual([]);
-    expect(notInFirstArray([], [1,2,3,4,5])).toStrictEqual([1,2,3,4,5]);
-    expect(notInFirstArray([1,2,3,4,5], [])).toStrictEqual([]);
+  test('It should not return the cities whose names begin with the letters K through Z', () => {
+    expect(citiesAtoJ(cities)).not.toContain('San Diego', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Newport Beach');
   });
 });
 
 xdescribe('Testing challenge 7', () => {
-  test('It should return an array containing the stats that are greater than the input', () => {
-    expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
-    expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
-    expect(getBaseStatGreaterThan(snorlaxData.stats, 110)).toStrictEqual([]);
+  test('It should match any of the acceptable inputs', () => {
+    expect(matchMonth('Oct')).toBeTruthy();
+    expect(matchMonth('oct')).toBeTruthy();
+    expect(matchMonth('October')).toBeTruthy();
+    expect(matchMonth('october')).toBeTruthy();
   });
-  test('It should work for non-Snorlax data', () => {
-    expect(getBaseStatGreaterThan([{baseStat: 10}, {baseStat: -85}, {baseStat: 0}, {baseStat: -50}], -60)).toStrictEqual([{baseStat: 10}, {baseStat: 0}, {baseStat: -50}]);
+
+  test('It should not match anything other than the acceptable inputs', () => {
+    expect(matchMonth('November')).toBeFalsy();
+    expect(matchMonth('nov')).toBeFalsy();
+    expect(matchMonth(123)).toBeFalsy();
+    expect(matchMonth('octob')).toBeFalsy();
+    expect(matchMonth('OCTOBER')).toBeFalsy();
+    expect(matchMonth('notOctober')).toBeFalsy();
   });
 });
 
 xdescribe('Testing challenge 8', () => {
-  test('It should return the name of the stats that exceed that maximum', () => {
-    expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
-    expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
+  const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
+
+  test('It should only return words that are immediately followed by a space', () => {
+    expect(noPunctuation(lorem)).toStrictEqual([ 'Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ' ]);
+    expect(noPunctuation(lorem).length).toStrictEqual(23);
+    expect(noPunctuation('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toEqual(expect.arrayContaining(['Given ', 'by ', 'our ', 'hand ', 'in ', 'the ', 'meadow ', 'that ', 'is ', 'called ', 'between ', 'Windsor ', 'and ', 'on ', 'the ', 'fifteenth ', 'day ', 'of ', 'June ', 'in ', 'the ', 'seventeenth ', 'year ', 'of ', 'our ', 'reign ', 'the ', 'new ', 'regnal ', 'year ', 'began ', 'on ', '28 ']));
   });
 
-  test('It should return the name of the stats that exceed that maximum', () => {
-    expect(getStatName(snorlaxData.stats, 120)).toStrictEqual([]);
-    expect(getStatName(snorlaxData.stats, 120).length).toStrictEqual(0);
-  });
-
-  test('It should work for non-snorlax data', () => {
-    expect(getStatName([
-      {baseStat: 10, stat: {name: 'one'}},
-      {baseStat: -85, stat: {name: 'two'}},
-      {baseStat: 0, stat: {name: 'three'}},
-      {baseStat: -50, stat: {name: 'four'}}
-    ], -60)).toStrictEqual(['one', 'three', 'four']);
+  test('It should not contain words that are followed by any non-space character', () => {
+    expect(noPunctuation(lorem)).not.toContain(['amet,', 'elit.', 'egestas.', 'elit,', 'sed.', 'sem,', 'diam.', 'nibh.', 'porttitor.', 'euismod,', 'ultrices.', 'massa,', 'vel,', 'purus.', 'purus,', 'odio.', 'aliquet,', 'non,', 'sem.']);
   });
 });
 
 xdescribe('Testing challenge 9', () => {
-  test('It should return an array containing characters who do not have children', () => {
-    expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
-    expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
+  let startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
+
+  test('It should remove the vowels from the hangman string and replace them with underscores', () => {
+    expect(hangman(startString)).toStrictEqual('Th_s _s _ r_g_x ch_ll_ng_. W_ _r_ try_ng t_ cr__t_ _ h_ngm_n phr_s_ wh_r_ _ll _f th_ v_w_ls _r_ m_ss_ng!');
+    expect(hangman('I wAnt them all tO bE removed and replaced with Underscores.')).toStrictEqual('_ w_nt th_m _ll t_ b_ r_m_v_d _nd r_pl_c_d w_th _nd_rsc_r_s.');
+  });
+
+  test('It should not contain the letters "a", "e", "i", "o", or "u"', () => {
+    expect(hangman(startString)).not.toContain('a', 'e', 'i', 'o', 'u');
   });
 });
 
 xdescribe('Testing challenge 10', () => {
-  test('It should remove non-integers and return "even" or "odd', () => {
-    expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
-    expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
-    expect(evenOddNumericValues(['a', 'b', 'c'])).toStrictEqual([]);
-  });
-  test('It should not accept strings that look like numbers', () => {
-    expect(evenOddNumericValues(['1', 2, 3, '4', 5,'6'])).toStrictEqual(['even', 'odd', 'odd']);
+  test('It should return an array of instances of "sells", shells", and "seashells"', () => {
+    expect(findShells(seashells)).toStrictEqual(['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);
+    expect(findShells(seashells).length).toStrictEqual(9);
   });
 });
