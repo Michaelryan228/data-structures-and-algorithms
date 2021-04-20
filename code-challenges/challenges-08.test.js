@@ -74,8 +74,10 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  const regularShow = /[w]/;
+  return regularShow.test(str);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -89,9 +91,7 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  // Solution code here...
-};
+const isNum = (input) => /[0-9]/.test(input);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -101,7 +101,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  const lowerCasedWorld = /world/;
+  return lowerCasedWorld.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,9 +113,7 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const isCapitalized = (str) => {
-  // Solution code here...
-};
+const isCapitalized = (str) => [...str.matchAll(/\b[A-Z]\w*\b/g)].map(items => items[0]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -123,7 +122,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  return arr.filter(x => (/^[A-J]/).test(x));
 };
 
 /* ------------------------------------------------------------------------------------------------
