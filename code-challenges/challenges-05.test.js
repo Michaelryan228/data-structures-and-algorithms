@@ -22,9 +22,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
-  // Solution code here...
-};
+const addValues = (arr) => arr.reduce((answerSoFar, currentValue) => answerSoFar + currentValue, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -38,9 +36,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
-};
+const addPurchases = (arr) => arr.reduce( (accumulator, object) => +(accumulator + object.purchasePrice), 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -51,7 +47,9 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  return arr.reduce( (answerSoFar, current) => {
+    return answerSoFar + 1;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +109,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce ( (answerSoFar, current) => {
+    answerSoFar.push(current.name);
+    return answerSoFar;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +124,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split('').reduce((rev, char) => char + rev, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
