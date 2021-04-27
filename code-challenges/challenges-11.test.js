@@ -51,7 +51,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let sum = 0;
+  for(let i = 0; i < input.length; i++){
+    for(let j = 0; j < input[i].length; j++){
+      sum += input[i][j];
+    }
+  }
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,9 +72,7 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+const divisibleByFiveTwoToThePower = (input) => input.map(arr => arr.filter(number => typeof(number) === 'number' && number % 5 === 0).map(value => Math.pow(2, value)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -132,9 +136,7 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+let findMaleAndFemale = (data) => data.filter(obj => obj.gender === 'male' || obj.gender === 'female').map(character => character.name).join(' and ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -142,9 +144,7 @@ CHALLENGE 6
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = (data) => {
-  // Solution code here...
-};
+let findShortest = (data) => data.sort((a,b) => parseInt(a.height) < parseInt(b.height) ? -1 : 1)[0].name;
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
