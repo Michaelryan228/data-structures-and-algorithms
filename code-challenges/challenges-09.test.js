@@ -9,7 +9,10 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+  const max = arr.reduce((previous, current) => {
+    return Math.max(previous, current)
+  });
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,8 +27,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
+const getCourseKeys = obj => {
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +40,9 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let array = Object.values(obj);
+  let answer = array.includes(value) ? true : false;
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +65,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(item => `${item[0]}: ${item[1]}`);
 };
 
 
