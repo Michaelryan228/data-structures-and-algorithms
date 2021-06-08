@@ -35,7 +35,7 @@ Write a function called reverseArray which takes an array as an argument without
 
 ### Whiteboard Visual
 ***[Your Whiteboard Image]***
-![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-reverse/python/code_challenges/img/Whiteboard%20Challenge%20-%20Code%20Challenge%201.jpg)
+![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-reverse/python/code_challenges/img/array-reverse.jpg)
 
 
 ---
