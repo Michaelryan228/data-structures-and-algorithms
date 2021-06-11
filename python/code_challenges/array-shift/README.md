@@ -1,22 +1,20 @@
 # Daily Code Challenge README Example
 
-## Perfect Sequence
-*Author: Michael Ryan and Kevin Henry*
+*Author: Michael Ryan and Davee Sok*
 
 ---
 
 ### Problem Domain
 ***[Problem Domain for the Code Challenge]***
 
-Write a function called reverseArray which takes an array as an argument without utilizing any of the built-in methods avail to Py, return an array with elements in reverse order.
-
+Write a function called insertShiftArray which takes in an array and a value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 ---
 
 ### Inputs and Expected Outputs
 
 | Input | Output |
 | :----------- | :----------- |
-| [1,2,3,4,5,6] | [6,5,4,3,2,1] |
+| [1,2,3,4,5,6], 9 | [1,2,3,9,4,5,6] |
 
 
 
@@ -35,7 +33,7 @@ Write a function called reverseArray which takes an array as an argument without
 
 ### Whiteboard Visual
 ***[Your Whiteboard Image]***
-![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-reverse/python/code_challenges/img/array-reverse.jpg)
+![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-shift/python/code_challenges/img/array-shift.jpg)
 
 
 ---
