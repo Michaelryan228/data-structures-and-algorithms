@@ -33,7 +33,7 @@ Write a function called insertShiftArray which takes in an array and a value to 
 
 ### Whiteboard Visual
 ***[Your Whiteboard Image]***
-![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-reverse/python/code_challenges/img/array-reverse.jpg)
+![Image 1](https://github.com/Michaelryan228/data-structures-and-algorithms/blob/array-shift/python/code_challenges/img/array-shift.jpg)
 
 
 ---
