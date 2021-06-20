@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, value=None, next=None):
-        self.val = value
+        self.value = value
         self.next = next
 
 class LinkedList:
@@ -37,7 +37,7 @@ class LinkedList:
         current = self.head
 
         while current is not None:
-            string += f"{ {current} } ->"
+            string += f"{ {current.value} } -> "
             current = current.next
 
         string += f" None "
@@ -46,10 +46,9 @@ class LinkedList:
 
 
 if __name__ == "__main__":
-    pass
 
-    #ll1 = LinkedList()
-    #ll1.insert("a").insert("b").insert("c").insert("d")
+    ll1 = LinkedList()
+    ll1.insert("a").insert("b").insert("c").insert("d")
 
-    #result = str(ll1)
-    #print(result)
+    result = str(ll1)
+    print(result)
