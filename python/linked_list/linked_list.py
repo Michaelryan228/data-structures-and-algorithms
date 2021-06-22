@@ -44,6 +44,15 @@ class LinkedList:
 
         return string
 
+    def append(self,value):
+        pass
+
+    def insertAfter(self, value, newValue):
+        pass
+
+    def insertBefore(self, value, newValue):
+        pass
+
 
 if __name__ == "__main__":
 
