@@ -45,19 +45,57 @@ class LinkedList:
         return string
 
     def append(self,value):
-        pass
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            return self
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        current.next = new_node
+        return self
+
 
     def insertAfter(self, value, newValue):
-        pass
+        new_node = Node(new_value)
+
+        if self.head is None:
+            return None
+
+        current = self.head
+
+        while current is not None:
+            if current.value == target:
+                new_node.next = current.next
+                current.next = new_node
+                return self
+            current = current.next
+
+        print("Target not within list")
 
     def insertBefore(self, value, newValue):
-        pass
+        new_node = Node(new_value)
+
+        if self.head is None:
+            return None
+
+        if self.head.value == target:
+            new_node.next = self.head
+            self.head = new_node
+            return self
+
+        current = self.head
+
+        while current is not None:
+            if current.next.value == target:
+                new_node.next = current.next
+                current.next = new_node
+                return self
+            current = current.next
+
+        print("Target not within list")
 
 
 if __name__ == "__main__":
 
-    ll1 = LinkedList()
-    ll1.insert("a").insert("b").insert("c").insert("d")
-
-    result = str(ll1)
-    print(result)
+    pass
