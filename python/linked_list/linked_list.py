@@ -56,7 +56,7 @@ class LinkedList:
         return self
 
 
-    def insertAfter(self, value, newValue):
+    def insert_after(self, target, new_value):
         new_node = Node(new_value)
 
         if self.head is None:
@@ -73,7 +73,7 @@ class LinkedList:
 
         print("Target not within list")
 
-    def insertBefore(self, value, newValue):
+    def insert_before(self, target, new_value):
         new_node = Node(new_value)
 
         if self.head is None:
