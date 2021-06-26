@@ -61,3 +61,6 @@ Big O:
 Time: O(n)
 Space: O(1)
 
+https://github.com/Michaelryan228/data-structures-and-algorithms/blob/linked-list-insertion-final/python/linked_list/img/linked_list.jpg?raw=true
+
+Worked with Davee Sok
