@@ -1,4 +1,4 @@
-Singly Linked List
+Linked List Zip
 A collection of methods on a Linked List Class
 
 Linked List Methods

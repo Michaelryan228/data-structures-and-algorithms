@@ -95,6 +95,36 @@ class LinkedList:
 
         print("Target not within list")
 
+def linked_list_zip(linklist1, linklist2):
+    if linklist1.head is None and linklist2.head is None:
+        return None
+    if linklist1.head is None:
+          return linklist2
+    if linklist2.head is None:
+            return linklist1
+
+    l1cur = linklist1.head
+    l1next = l1cur.next
+    l2cur = linklist2.head
+    l2next = l2cur.next
+    while l1next and l2next:
+        l1cur.next = l2cur
+        l2cur.next = l1next
+        l1cur = l1next
+        l2cur = l2next
+        l1next = l1next.next
+        l2next = l2next.next
+    if l1next is None and l2next is None:
+        l1cur.next = l2cur
+        return(linklist1)
+    if l1next is not None:
+        l1cur.next = l2cur
+        l2cur.next = l1next
+        return(linklist1)
+    if l2next is not None:
+        l2cur.next = l2cur
+        return(linklist1)
+
 
 if __name__ == "__main__":
 
