@@ -2,6 +2,9 @@ Pseudo Queue with Stacks
 Implement a Queue class using two stacks
 
 White Board Process
+
+https://github.com/Michaelryan228/data-structures-and-algorithms/blob/stack-queue-pseudo/python/stack_queue_pseudo/challenge11.jpg?raw=true
+
 Challenge 11
 
 Approach and Efficiency
